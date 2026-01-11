@@ -71,12 +71,21 @@
         }
         .card:active { transform: scale(0.96); }
 
-        #word-display { 
-            font-size: clamp(60px, 20vw, 120px); 
-            font-weight: 800; 
-            color: var(--primary); 
-            margin: 0; 
-        }
+     #word-display { 
+    /* clamp(最小, 視窗寬度比, 最大) */
+    /* 將最大值從 150px 調降，並縮小視窗寬度佔比 */
+    font-size: clamp(40px, 15vw, 100px); 
+    
+    font-weight: 800; 
+    color: var(--primary); 
+    margin: 0;
+    
+    /* 核心修正：限制文字寬度不得超過卡片 */
+    width: 90%; 
+    word-wrap: break-word; /* 避免長單字直接衝出邊界 */
+    text-align: center;
+    line-height: 1.2; /* 增加行高，若單字折行才不會疊在一起 */
+}
         
         /* 1. 預設狀態：完全透明，且「不設定」動畫時間 */
 #romaji-display { 
@@ -579,6 +588,7 @@ let currentChapter = Object.keys(chapters)[0];
     </script>
 </body>
 </html>
+
 
 
 
