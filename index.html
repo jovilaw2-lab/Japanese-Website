@@ -61,15 +61,21 @@
             height: 45vh;
             padding: 20px;       /* 增加內距 */
     box-sizing: border-box; /* 確保 padding 不會撐大卡片本身 */
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            justify-content: center;
-            border-radius: 24px; 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            cursor: pointer; 
-            -webkit-tap-highlight-color: transparent;
-            transition: transform 0.1s ease;
+            /* 核心置中設定 */
+    display: flex;           /* 啟用彈性佈局 */
+    flex-direction: column;  /* 讓裡面的元素由上至下排列 */
+    align-items: center;     /* 水平置中 */
+    justify-content: center; /* 垂直置中 */
+    
+    text-align: center;      /* 確保多行文字時也是置中的 */
+    padding: 20px;           /* 增加內距，防止文字貼邊 */
+    box-sizing: border-box;  /* 讓 padding 不會撐大卡片 */
+    
+    border-radius: 24px; 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    cursor: pointer; 
+    transition: transform 0.1s ease;
+    -webkit-tap-highlight-color: transparent;
         }
         .card:active { transform: scale(0.96); }
 
@@ -590,6 +596,7 @@ let currentChapter = Object.keys(chapters)[0];
     </script>
 </body>
 </html>
+
 
 
 
